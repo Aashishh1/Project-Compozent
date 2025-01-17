@@ -2,6 +2,7 @@
 
 Welcome to the **Diabetes Risk Prediction for Females** web app repository! This project aims to assist in identifying diabetes risk for females through an intuitive and interactive interface. The model behind this application is the reliable **AdaBoost Classifier**.
 
+Dataset : https://www.kaggle.com/datasets/mathchi/diabetes-data-set
 ---
 
 ## 🌟 Features
