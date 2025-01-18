@@ -4,6 +4,7 @@ import string
 import pickle
  
 model = pickle.load(open('model_pkl.pkl','rb'))
+scaler = pickle.load(open('scaler.sav', 'rb'))
 
 
 def main():
@@ -23,9 +24,14 @@ def main():
 
     inputs = np.array([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 
+    scaled_features = scaler.transform(inputs)
+    print(scaled_features)
+    print(scaled_features.shape)
+
     if st.button('Predict'):
         try:
-            result = model.predict(inputs)
+            result = model.predict(scaled_features)
+            print(result)
             if result[0] == 0:
                 st.success("Not very probable you will get diabetes soon. Take care of your health!")
             else:
